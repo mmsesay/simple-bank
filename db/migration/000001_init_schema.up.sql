@@ -9,8 +9,6 @@ CREATE INDEX "account_owner_index" ON
     "account"("owner");
 ALTER TABLE
     "account" ADD PRIMARY KEY("id");
-CREATE INDEX "account_owner_index" ON
-    "account"("owner");
 CREATE TABLE "entries"(
     "id" INTEGER NOT NULL,
     "account_id" BIGINT NULL,
@@ -21,8 +19,6 @@ CREATE INDEX "entries_account_id_index" ON
     "entries"("account_id");
 ALTER TABLE
     "entries" ADD PRIMARY KEY("id");
-CREATE INDEX "entries_account_id_index" ON
-    "entries"("account_id");
 COMMENT
 ON COLUMN
     "entries"."amount" IS 'can be negative or positive';
@@ -39,10 +35,6 @@ CREATE INDEX "transfers_to_account_id_index" ON
     "transfers"("to_account_id");
 ALTER TABLE
     "transfers" ADD PRIMARY KEY("id");
-CREATE INDEX "transfers_from_account_id_index" ON
-    "transfers"("from_account_id");
-CREATE INDEX "transfers_to_account_id_index" ON
-    "transfers"("to_account_id");
 COMMENT
 ON COLUMN
     "transfers"."amount" IS 'must be positive';
